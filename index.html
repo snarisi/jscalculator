@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Calculator</title>
+    <meta>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  
+  <body ng-app="calcApp">
+  
+    <div id="calc-container" class="container-fluid" ng-controller="CalcCtrl">
+      <div class="row">
+        <div class="col-xs-12 input-area"><p>{{input}}</p></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3"><div class="calc-button" ng-click="clearAll()"><p>C</p></div></div>
+        <div class="col-xs-3"><div class="calc-button" ng-click="clearEntry()"><p>CE</p></div></div>
+        <div class="col-xs-3"><div class="calc-button" ng-click="operatorPress(power)"><p>^</p></div></div>
+        <div class="col-xs-3"><div class="calc-button" ng-click="operatorPress(divide)"><p>/</p></div></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3"><div class="calc-button" ng-click="digitPress('7')"><p>7</p></div></div>
+        <div class="col-xs-3"><div class="calc-button" ng-click="digitPress('8')"><p>8</p></div></div>
+        <div class="col-xs-3"><div class="calc-button" ng-click="digitPress('9')"><p>9</p></div></div>
+        <div class="col-xs-3"><div class="calc-button" ng-click="operatorPress(multiply)"><p>x</p></div></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3"><div class="calc-button" ng-click="digitPress('4')"><p>4</p></div></div>
+        <div class="col-xs-3"><div class="calc-button" ng-click="digitPress('5')"><p>5</p></div></div>
+        <div class="col-xs-3"><div class="calc-button" ng-click="digitPress('6')"><p>6</p></div></div>
+        <div class="col-xs-3"><div class="calc-button" ng-click="operatorPress(subtract)"><p>-</p></div></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3"><div class="calc-button" ng-click="digitPress('1')"><p>1</p></div></div>
+        <div class="col-xs-3"><div class="calc-button" ng-click="digitPress('2')"><p>2</p></div></div>
+        <div class="col-xs-3"><div class="calc-button" ng-click="digitPress('3')"><p>3</p></div></div>
+        <div class="col-xs-3"><div class="calc-button" ng-click="operatorPress(add)"><p>+</p></div></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3"><div class="calc-button" ng-click="digitPress('0')"><p>0</p></div></div>
+        <div class="col-xs-3"><div class="calc-button" ng-click="decimalPress()"><p>.</p></div></div>
+        <div class="col-xs-6"><div class="calc-button" ng-click="equalsPress()"><p>=</p></div></div>
+      </div>
+
+    </div>
+  
+  </body>
+  
+  
+</html>
