@@ -1,0 +1,29 @@
+#calc-container {
+  margin-top: 20px;
+  max-width: 400px;
+}
+
+.calc-button {
+  text-align: center;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  height: 30px;
+}
+
+.calc-button p {
+  padding: 5px;
+}
+
+.input-area {
+  height: 30px;
+  text-align: right;
+}
+
+.input-area p {
+  margin-right: 10px;
+}
+
+.row {
+  height: 40px;
+}
