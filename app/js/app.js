@@ -1,5 +1,7 @@
 (function () {
   "use strict";
+  //bug when you press two operators in a row
+  
   
   var app = angular.module("calcApp", []);
   
@@ -99,16 +101,22 @@
     $scope.operatorPress = function (val) {
       //if there are no other operations in the chain, set operator and op1
       if (operator === "") {
-        setOperator(val);
-        setOp1(parseFloat($scope.input));
-        freshInput = true;
+        //only if there has been a value input
+        if ($scope.input !== "") {
+          setOperator(val);
+          setOp1(parseFloat($scope.input));
+          freshInput = true;
+        }
       //if there is another operation in the chain, perfrom that operation, then set operator and op1  
       } else {
-        setOp2(parseFloat($scope.input));
-        $scope.input = roundToPlaces(calculate(op1, op2, operator), decimalPlaces).toString();
-        setOp1(parseFloat($scope.input));
-        setOperator(val);
-        freshInput = true;
+        //only if a new value has been input
+        if (!freshInput) {
+          setOp2(parseFloat($scope.input));
+          $scope.input = roundToPlaces(calculate(op1, op2, operator), decimalPlaces).toString();
+          setOp1(parseFloat($scope.input));
+          setOperator(val);
+          freshInput = true;
+        }
       }
     };
 
@@ -134,6 +142,5 @@
     $scope.clearEntry = function () {
       $scope.input = "";
     };
-    
   }]);
 }());
